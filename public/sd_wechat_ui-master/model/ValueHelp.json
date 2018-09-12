@@ -1,0 +1,55 @@
+{
+    "OrderTypes": [{
+       "Type": "AA",
+       "Description": "Promotion Order"
+    },{
+        "Type": "AD9",
+        "Description": "RRB Order"
+    },{
+        "Type": "GOR",
+        "Description": "GG Standard Order"
+    },{
+        "Type": "CR",
+        "Description": "Credit Memo Request"
+    },{
+        "Type": "OR",
+        "Description": "Standard Order"
+    },{
+        "Type": "RE",
+        "Description": "Returns"
+    }],
+
+    "Customers": [{
+        "Customer": "CUSTOMER1",
+        "City": "SHANGHAI",
+        "Code": "560066"
+    },{
+        "Customer": "CUSTOMER",
+        "City": "CHICAGO",
+        "Code": "222123"
+    },{
+        "Customer": "STEUS",
+        "City": "SHANGHAI",
+        "Code": "560066"
+    },{
+        "Customer": "CSTEW",
+        "City": "IDSTEIN",
+        "Code": "560066"
+    },{
+        "Customer": "CUS04",
+        "City": "HANAUA",
+        "Code": "232142"
+    },{
+        "Customer": "CUS01",
+        "City": "ShangHai",
+        "Code": "560066"
+    },{
+        "Customer": "XMAN",
+        "City": "CHENGDU",
+        "Code": "232123"
+    },{
+        "Customer": "GCA_LS",
+        "City": "BANGALORE",
+        "Code": "123421"
+    }]
+}

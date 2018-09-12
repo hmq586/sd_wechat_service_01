@@ -1,0 +1,109 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+      "id": "sap.ui.sd",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "title": "{{appTitle}}",
+      "description": "{{appDescription}}",
+      "applicationVersion": {
+        "version": "1.0.0"
+      }
+    },
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+      }
+    },
+    "sap.ui5": {
+      "rootView": {
+          "viewName": "sap.ui.sd.view.App",
+          "type": "XML",
+          "async": true,
+          "id": "app"
+      },
+      "dependencies": {
+        "minUI5Version": "1.30",
+        "libs": {
+          "sap.m": {}
+        }
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "sap.ui.sd.i18n.i18n"
+          }
+        },
+        "invoice": {
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "model/Invoices.json"
+        },
+        "valueHelp": {
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "model/ValueHelp.json"
+        }
+      },
+      "routing": {
+         "config": {
+            "routerClass": "sap.m.routing.Router",
+            "viewType": "XML",
+            "viewPath": "sap.ui.sd.view",
+            "controlId": "app",
+            "controlAggregation": "pages",
+            "transition": "slide",
+            "async": true,
+            "bypassed": {
+               "target": "notFound"
+            }
+         },
+         "routes": [{
+            "pattern": "",
+            "name": "appHome",
+            "target": "home"
+         },
+         {
+            "pattern": "create/{openId}",
+            "name": "create",
+            "target": "create"
+         },
+         {
+             "pattern": "user/{openId}",
+             "name": "user",
+             "target": "user"
+         }],
+         "targets": {
+            "home": {
+               "viewId": "home",
+               "viewName": "Home",
+               "viewLevel" : 1
+            },
+            "create": {
+                "viewId": "create",
+                "viewName": "Create",
+                "transition": "show"
+            },
+            "user": {
+                "viewId": "user",
+                "viewName": "User",
+                "transition": "show"
+            },
+            "notFound": {
+               "viewId": "notFound",
+               "viewName": "NotFound",
+               "transition": "show"
+            }
+         }
+      },
+      "resources": {
+        "css": [
+          {
+            "uri": "css/style.css"
+          }
+        ]
+      }
+    }
+  }

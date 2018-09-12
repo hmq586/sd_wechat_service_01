@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="{i18n>OrderType}"
+		class="sapUiPopupWithPadding"
+		items="{valueHelp>/Customers}"
+		search="_handleValueHelpSearch"
+		confirm="_handleValueHelpClose"
+		cancel="_handleValueHelpClose">
+		<StandardListItem
+			title="{valueHelp>Customer} {valueHelp>Code}"
+			description="{valueHelp>City}" />
+	</SelectDialog>
+</core:FragmentDefinition>

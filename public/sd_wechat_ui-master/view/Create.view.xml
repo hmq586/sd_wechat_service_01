@@ -1,0 +1,113 @@
+<mvc:View
+   controllerName="sap.ui.sd.controller.Create"
+   xmlns="sap.m"
+   	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>createOrider}">
+    <headerContent>
+            <Button
+                icon="sap-icon://travel-request"
+                press="onOpenDialog"/>
+    </headerContent>
+    <content>
+     	<VBox class="sapUiSmallMargin">
+		<f:Form id="createOrder"
+			editable="true">
+			<!-- <f:title>
+				<core:Title text="Address" />
+			</f:title> -->
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="{i18n>OrderType}">
+							<f:fields>
+                                <Input
+                                    id="inputOrderType"
+                                    class="sapUiSmallMarginBottom"
+                                    type="Text"
+                                    placeholder="Enter Order Type"
+                                    enabled="true"
+                                    editable="true"
+                                    showValueHelp="true"
+                                    valueHelpRequest="handleValueHelp" />
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement label="{i18n>SlodToParty}">
+							<f:fields>
+                                <Input
+                                    id="inputSoldToParty"
+                                    class="sapUiSmallMarginBottom"
+                                    type="Text"
+                                    enabled="true"
+                                    editable="true"
+                                    showValueHelp="true"
+                                    valueHelpRequest="handleCustomerHelp" />
+							</f:fields>
+						</f:FormElement>
+                    	<f:FormElement label="{i18n>ShipToParty}">
+							<f:fields>
+                                <Input
+                                    id="inputShipToParty"
+                                    class="sapUiSmallMarginBottom"
+                                    type="Text"
+                                    enabled="true"
+                                    editable="true"
+                                    showValueHelp="true"
+                                    valueHelpRequest="handleCustomerHelp" />
+							</f:fields>
+						</f:FormElement>
+                    	<f:FormElement label="{i18n>CusRef}">
+							<f:fields>
+                                <Input
+                                    id="inputCusRef"
+                                    class="sapUiSmallMarginBottom"
+                                    type="Text"
+                                    enabled="true"
+                                    editable="true" />
+							</f:fields>
+						</f:FormElement>
+                    	<f:FormElement label="{i18n>CusRefDate}">
+							<f:fields>
+                                <DateTimePicker
+                                    id="inputCusRefDate"
+                                    class="sapUiSmallMarginBottom"
+                                    placeholder="Enter Date ..."
+                                    change="handleDateChange"/>
+							</f:fields>
+						</f:FormElement>
+
+                        <f:FormElement >
+							<f:fields>
+                                <Button
+                                    id="submit"
+                                    press="onSubmit"
+                                    class="sapUiSmallMarginBottom myAppDemoWT myCustomButton"
+                                    text="{i18n>submit}" />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+    </content>
+    </Page>
+</mvc:View>

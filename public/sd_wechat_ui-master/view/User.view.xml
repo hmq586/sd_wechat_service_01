@@ -1,0 +1,99 @@
+<mvc:View
+   controllerName="sap.ui.sd.controller.User"
+   xmlns="sap.m"
+   	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>UserMapping}">
+    <headerContent>
+            <Button
+                icon="sap-icon://hello-world"
+                press="onOpenDialog"/>
+    </headerContent>
+    <content>
+     	<VBox class="sapUiSmallMargin">
+		<f:Form id="bing-user"
+			editable="true">
+			<!-- <f:title>
+				<core:Title text="Address" />
+			</f:title> -->
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="{i18n>eamil}">
+							<f:fields>
+                                <Input
+                                    id="inputEmail"
+                                    type="Email"
+                                    class="sapUiSmallMarginBottom"
+                                    placeholder="Enter Email ..."
+                                    value="{
+                                        path : '/Email',
+                                        type : '.customEMailType'
+                                    }" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>validityCode}">
+							<f:fields>
+								<Input id="inputCode"
+                                       type="Number"
+                                       class="sapUiSmallMarginBottom"
+                                       placeholder="Enter the Code ..."
+                                       value="{
+                                            path : '/Code',
+                                            type : 'sap.ui.model.type.String',
+                                            constraints : {
+                                                minLength: 6,
+						                    	maxLength: 6
+                                            }
+                                        }" >
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S7" />
+									</layoutData>
+                                </Input>
+                                <Button
+                                    id="buttonGetCode"
+                                    text="{i18n>getCode}"
+                                    press="onGetCode"
+                                    type="Accept"
+                                    class="myAppDemoWT myCustomButton btn-primary">
+                                    <layoutData>
+										<l:GridData span="XL1 L2 M2 S5" />
+									</layoutData>
+                                </Button>
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement >
+							<f:fields>
+                                <Button
+                                    id="submit"
+                                    press="onSubmit"
+                                    class="sapUiSmallMarginBottom myAppDemoWT myCustomButton"
+                                    text="{i18n>submit}" />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+    </content>
+    </Page>
+</mvc:View>
